@@ -23,8 +23,13 @@ const Header = () => {
     <header className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-bold text-teal-600">
+          <Link to="/" className="flex items-center space-x-3">
+            <img 
+              src="/lovable-uploads/d66f9bac-1e2d-4291-b364-342a0d944a0b.png" 
+              alt="Aadhvikha Ventures Logo" 
+              className="h-12 w-auto"
+            />
+            <div className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
               Aadhvikha Ventures
             </div>
           </Link>
@@ -35,9 +40,9 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-sm font-medium transition-colors duration-200 hover:text-teal-600 ${
+                className={`text-sm font-medium transition-colors duration-200 hover:text-orange-500 ${
                   isActive(item.href)
-                    ? "text-teal-600 border-b-2 border-teal-600"
+                    ? "text-orange-500 border-b-2 border-orange-500"
                     : "text-gray-700"
                 }`}
               >
@@ -47,10 +52,10 @@ const Header = () => {
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" className="text-teal-600 border-teal-600 hover:bg-teal-50">
+            <Button variant="outline" className="text-orange-500 border-orange-500 hover:bg-orange-50">
               Request Information
             </Button>
-            <Button className="bg-teal-600 hover:bg-teal-700">
+            <Button className="bg-gradient-primary hover:opacity-90 text-white border-0">
               Start Learning Today
             </Button>
           </div>
@@ -79,8 +84,8 @@ const Header = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`text-sm font-medium transition-colors duration-200 hover:text-teal-600 ${
-                    isActive(item.href) ? "text-teal-600" : "text-gray-700"
+                  className={`text-sm font-medium transition-colors duration-200 hover:text-orange-500 ${
+                    isActive(item.href) ? "text-orange-500" : "text-gray-700"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -88,10 +93,10 @@ const Header = () => {
                 </Link>
               ))}
               <div className="flex flex-col space-y-2 pt-4">
-                <Button variant="outline" className="text-teal-600 border-teal-600 hover:bg-teal-50">
+                <Button variant="outline" className="text-orange-500 border-orange-500 hover:bg-orange-50">
                   Request Information
                 </Button>
-                <Button className="bg-teal-600 hover:bg-teal-700">
+                <Button className="bg-gradient-primary hover:opacity-90 text-white border-0">
                   Start Learning Today
                 </Button>
               </div>

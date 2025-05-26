@@ -7,22 +7,22 @@ import { CheckCircle, Users, Star, BookOpen, Award, Clock, Download } from "luci
 const Homepage = () => {
   const features = [
     {
-      icon: <Award className="h-8 w-8 text-teal-600" />,
+      icon: <Award className="h-8 w-8 text-orange-500" />,
       title: "Accredited by Institute of Administrative Management (IAM)",
       description: "Internationally recognized certifications"
     },
     {
-      icon: <Clock className="h-8 w-8 text-teal-600" />,
+      icon: <Clock className="h-8 w-8 text-orange-500" />,
       title: "Flexible Learning",
       description: "Learn at your own pace, anywhere, anytime"
     },
     {
-      icon: <BookOpen className="h-8 w-8 text-teal-600" />,
+      icon: <BookOpen className="h-8 w-8 text-orange-500" />,
       title: "Industry-Aligned Curriculum",
       description: "Courses designed with current industry needs"
     },
     {
-      icon: <CheckCircle className="h-8 w-8 text-teal-600" />,
+      icon: <CheckCircle className="h-8 w-8 text-orange-500" />,
       title: "CPD improvement",
       description: "Continuous Professional Development enhancement"
     }
@@ -52,7 +52,7 @@ const Homepage = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-teal-50 to-blue-50 py-20 lg:py-32">
+      <section className="relative bg-gradient-accent py-20 lg:py-32 mandala-pattern">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center animate-fade-in">
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
@@ -62,10 +62,10 @@ const Homepage = () => {
               Learn. Certify. Succeed.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-teal-600 hover:bg-teal-700 text-lg px-8 py-4">
+              <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-white border-0 text-lg px-8 py-4">
                 Explore Courses
               </Button>
-              <Button size="lg" variant="outline" className="text-teal-600 border-teal-600 hover:bg-teal-50 text-lg px-8 py-4">
+              <Button size="lg" variant="outline" className="text-orange-500 border-orange-500 hover:bg-orange-50 text-lg px-8 py-4">
                 Request Information
               </Button>
             </div>
@@ -78,11 +78,11 @@ const Homepage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
             <div className="animate-fade-in">
-              <div className="text-4xl font-bold text-teal-600 mb-2">1,000+</div>
+              <div className="text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2">1,000+</div>
               <div className="text-lg text-gray-600">Professionals Certified</div>
             </div>
             <div className="animate-fade-in">
-              <div className="text-4xl font-bold text-teal-600 mb-2">95%</div>
+              <div className="text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2">95%</div>
               <div className="text-lg text-gray-600">Student Satisfaction Rate</div>
             </div>
           </div>
@@ -102,7 +102,7 @@ const Homepage = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-all duration-300 hover-scale">
+              <Card key={index} className="text-center hover:shadow-lg transition-all duration-300 hover-scale border-l-4 border-l-orange-400">
                 <CardHeader>
                   <div className="flex justify-center mb-4">
                     {feature.icon}
@@ -135,7 +135,7 @@ const Homepage = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {reviews.map((review, index) => (
-              <Card key={index} className="hover:shadow-lg transition-all duration-300 hover-scale">
+              <Card key={index} className="hover:shadow-lg transition-all duration-300 hover-scale border-t-4 border-t-pink-400">
                 <CardHeader>
                   <div className="flex items-center justify-between">
                     <CardTitle className="text-lg font-semibold">
@@ -147,7 +147,7 @@ const Homepage = () => {
                       ))}
                     </div>
                   </div>
-                  <Badge variant="secondary">{review.course}</Badge>
+                  <Badge variant="secondary" className="bg-gradient-accent text-orange-600">{review.course}</Badge>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 italic">"{review.comment}"</p>
@@ -159,15 +159,15 @@ const Homepage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-teal-600">
+      <section className="py-20 bg-gradient-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Ready to Transform Your Career?
           </h2>
-          <p className="text-xl text-teal-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto">
             Join thousands of professionals who have advanced their careers through our certified programs
           </p>
-          <Button size="lg" className="bg-white text-teal-600 hover:bg-gray-100 text-lg px-8 py-4">
+          <Button size="lg" className="bg-white text-orange-500 hover:bg-gray-100 text-lg px-8 py-4">
             Start Learning Today
           </Button>
         </div>
