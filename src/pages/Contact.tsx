@@ -28,10 +28,10 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen py-20">
+    <div className="min-h-screen py-20 warm-section mandala-pattern">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Contact Us
           </h1>
@@ -46,10 +46,10 @@ const Contact = () => {
             <h2 className="text-3xl font-bold text-gray-900 mb-8">Get in Touch</h2>
             
             <div className="space-y-6 mb-8">
-              <Card className="hover:shadow-lg transition-all duration-300">
+              <Card className="hover:shadow-lg transition-all duration-300 border-l-4 border-l-orange-400">
                 <CardContent className="p-6">
                   <div className="flex items-center">
-                    <Mail className="h-8 w-8 text-teal-600 mr-4" />
+                    <Mail className="h-8 w-8 text-orange-500 mr-4" />
                     <div>
                       <h3 className="font-semibold text-gray-900">Email</h3>
                       <p className="text-gray-600">info@aadhvikhaventures.com</p>
@@ -59,10 +59,10 @@ const Contact = () => {
                 </CardContent>
               </Card>
 
-              <Card className="hover:shadow-lg transition-all duration-300">
+              <Card className="hover:shadow-lg transition-all duration-300 border-l-4 border-l-orange-400">
                 <CardContent className="p-6">
                   <div className="flex items-center">
-                    <Phone className="h-8 w-8 text-teal-600 mr-4" />
+                    <Phone className="h-8 w-8 text-orange-500 mr-4" />
                     <div>
                       <h3 className="font-semibold text-gray-900">Phone</h3>
                       <p className="text-gray-600">+1 (555) 123-4567</p>
@@ -72,10 +72,10 @@ const Contact = () => {
                 </CardContent>
               </Card>
 
-              <Card className="hover:shadow-lg transition-all duration-300">
+              <Card className="hover:shadow-lg transition-all duration-300 border-l-4 border-l-orange-400">
                 <CardContent className="p-6">
                   <div className="flex items-center">
-                    <MapPin className="h-8 w-8 text-teal-600 mr-4" />
+                    <MapPin className="h-8 w-8 text-orange-500 mr-4" />
                     <div>
                       <h3 className="font-semibold text-gray-900">Address</h3>
                       <p className="text-gray-600">123 Education Street</p>
@@ -85,10 +85,10 @@ const Contact = () => {
                 </CardContent>
               </Card>
 
-              <Card className="hover:shadow-lg transition-all duration-300">
+              <Card className="hover:shadow-lg transition-all duration-300 border-l-4 border-l-orange-400">
                 <CardContent className="p-6">
                   <div className="flex items-center">
-                    <Clock className="h-8 w-8 text-teal-600 mr-4" />
+                    <Clock className="h-8 w-8 text-orange-500 mr-4" />
                     <div>
                       <h3 className="font-semibold text-gray-900">Business Hours</h3>
                       <p className="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM</p>
@@ -104,11 +104,11 @@ const Contact = () => {
             <div className="space-y-4">
               <h3 className="text-xl font-semibold text-gray-900">Quick Actions</h3>
               <div className="flex flex-col space-y-3">
-                <Button className="bg-teal-600 hover:bg-teal-700 justify-start">
+                <Button className="bg-gradient-primary hover:opacity-90 text-white border-0 justify-start">
                   <Mail className="h-4 w-4 mr-2" />
                   Request Course Information
                 </Button>
-                <Button variant="outline" className="text-teal-600 border-teal-600 hover:bg-teal-50 justify-start">
+                <Button variant="outline" className="text-orange-500 border-orange-500 hover:bg-orange-50 justify-start">
                   <Phone className="h-4 w-4 mr-2" />
                   Schedule a Call
                 </Button>
@@ -118,7 +118,7 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div>
-            <Card className="hover:shadow-lg transition-all duration-300">
+            <Card className="hover:shadow-lg transition-all duration-300 border-t-4 border-t-pink-400">
               <CardHeader>
                 <CardTitle className="text-2xl font-bold text-gray-900">
                   Send us an Inquiry
@@ -209,7 +209,7 @@ const Contact = () => {
 
                   <Button 
                     type="submit" 
-                    className="w-full bg-teal-600 hover:bg-teal-700 text-lg py-3"
+                    className="w-full bg-gradient-primary hover:opacity-90 text-white border-0 text-lg py-3"
                     disabled={!contactMethod || !formData.name || !formData.inquiry}
                   >
                     <Send className="h-5 w-5 mr-2" />
@@ -220,20 +220,20 @@ const Contact = () => {
             </Card>
 
             {/* Additional Information */}
-            <Card className="mt-8">
+            <Card className="mt-8 bg-gradient-accent border-l-4 border-l-orange-400">
               <CardContent className="p-6">
                 <h3 className="font-semibold text-gray-900 mb-4">What happens next?</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center">
-                    <div className="w-2 h-2 bg-teal-600 rounded-full mr-3"></div>
+                    <div className="w-2 h-2 bg-gradient-primary rounded-full mr-3"></div>
                     We'll review your inquiry within 24 hours
                   </li>
                   <li className="flex items-center">
-                    <div className="w-2 h-2 bg-teal-600 rounded-full mr-3"></div>
+                    <div className="w-2 h-2 bg-gradient-primary rounded-full mr-3"></div>
                     A member of our team will contact you using your preferred method
                   </li>
                   <li className="flex items-center">
-                    <div className="w-2 h-2 bg-teal-600 rounded-full mr-3"></div>
+                    <div className="w-2 h-2 bg-gradient-primary rounded-full mr-3"></div>
                     We'll provide personalized guidance and answer all your questions
                   </li>
                 </ul>
@@ -244,14 +244,14 @@ const Contact = () => {
 
         {/* IAM Partnership Section */}
         <section className="mt-20">
-          <Card className="bg-teal-50 border-teal-200">
+          <Card className="bg-gradient-accent border-orange-200 border-t-4 border-t-pink-400">
             <CardContent className="p-8 text-center">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 Certified by Institute of Administrative Management (IAM)
               </h2>
               <div className="flex justify-center mb-6">
                 <div className="w-24 h-24 bg-white rounded-lg shadow-md flex items-center justify-center">
-                  <span className="text-teal-600 font-bold text-lg">IAM</span>
+                  <span className="text-orange-500 font-bold text-lg">IAM</span>
                 </div>
               </div>
               <p className="text-lg text-gray-700 mb-6 max-w-3xl mx-auto">
@@ -261,7 +261,7 @@ const Contact = () => {
                 href="https://instam.org" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-teal-600 hover:text-teal-700 font-semibold text-lg"
+                className="inline-flex items-center text-orange-500 hover:text-orange-600 font-semibold text-lg transition-colors duration-200"
               >
                 Visit IAM Website
                 <Send className="h-5 w-5 ml-2" />

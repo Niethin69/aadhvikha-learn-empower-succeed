@@ -74,10 +74,10 @@ const Courses = () => {
   ];
 
   return (
-    <div className="min-h-screen py-20">
+    <div className="min-h-screen py-20 warm-section mandala-pattern">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Our Courses
           </h1>
@@ -87,9 +87,9 @@ const Courses = () => {
         </div>
 
         {/* Filters */}
-        <div className="bg-white p-6 rounded-lg shadow-md mb-12">
+        <div className="bg-gradient-accent p-6 rounded-lg shadow-md mb-12 border-l-4 border-l-orange-400">
           <div className="flex items-center mb-6">
-            <Filter className="h-5 w-5 text-teal-600 mr-2" />
+            <Filter className="h-5 w-5 text-orange-500 mr-2" />
             <h3 className="text-lg font-semibold text-gray-900">Filter Courses</h3>
           </div>
           
@@ -163,12 +163,12 @@ const Courses = () => {
         {/* Course Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {sampleCourses.map((course, index) => (
-            <Card key={index} className="hover:shadow-lg transition-all duration-300 hover-scale">
+            <Card key={index} className="hover:shadow-lg transition-all duration-300 hover-scale border-l-4 border-l-orange-400">
               <CardHeader>
                 <div className="flex justify-between items-start mb-2">
-                  <Badge className="bg-teal-100 text-teal-800">{course.category}</Badge>
+                  <Badge className="bg-gradient-accent text-orange-800 border-0">{course.category}</Badge>
                   <div className="flex items-center">
-                    <Award className="h-4 w-4 text-yellow-500 mr-1" />
+                    <Award className="h-4 w-4 text-orange-500 mr-1" />
                     <span className="text-sm text-gray-600">IAM Certified</span>
                   </div>
                 </div>
@@ -185,8 +185,8 @@ const Courses = () => {
                     <Clock className="h-4 w-4 mr-1" />
                     {course.duration}
                   </div>
-                  <Badge variant="secondary">{course.level}</Badge>
-                  <Badge variant="outline">{course.format}</Badge>
+                  <Badge variant="secondary" className="bg-pink-100 text-pink-800">{course.level}</Badge>
+                  <Badge variant="outline" className="border-orange-300 text-orange-700">{course.format}</Badge>
                 </div>
                 
                 <div className="mb-6">
@@ -194,14 +194,14 @@ const Courses = () => {
                   <ul className="space-y-1">
                     {course.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center text-sm text-gray-600">
-                        <div className="w-2 h-2 bg-teal-600 rounded-full mr-2"></div>
+                        <div className="w-2 h-2 bg-gradient-primary rounded-full mr-2"></div>
                         {feature}
                       </li>
                     ))}
                   </ul>
                 </div>
                 
-                <Button className="w-full bg-teal-600 hover:bg-teal-700">
+                <Button className="w-full bg-gradient-primary hover:opacity-90 text-white border-0">
                   Learn More
                 </Button>
               </CardContent>
@@ -210,15 +210,15 @@ const Courses = () => {
         </div>
 
         {/* Course Template Information */}
-        <section className="bg-gray-50 p-8 rounded-lg">
+        <section className="bg-gradient-accent p-8 rounded-lg border-t-4 border-t-pink-400">
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
             Complete Course Details Available
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="text-center">
+            <Card className="text-center border-l-4 border-l-orange-400">
               <CardHeader>
-                <BookOpen className="h-8 w-8 text-teal-600 mx-auto mb-2" />
+                <BookOpen className="h-8 w-8 text-orange-500 mx-auto mb-2" />
                 <CardTitle className="text-lg">Course Overview</CardTitle>
               </CardHeader>
               <CardContent>
@@ -226,9 +226,9 @@ const Courses = () => {
               </CardContent>
             </Card>
 
-            <Card className="text-center">
+            <Card className="text-center border-l-4 border-l-orange-400">
               <CardHeader>
-                <Star className="h-8 w-8 text-teal-600 mx-auto mb-2" />
+                <Star className="h-8 w-8 text-orange-500 mx-auto mb-2" />
                 <CardTitle className="text-lg">Learning Outcomes</CardTitle>
               </CardHeader>
               <CardContent>
@@ -236,9 +236,9 @@ const Courses = () => {
               </CardContent>
             </Card>
 
-            <Card className="text-center">
+            <Card className="text-center border-l-4 border-l-orange-400">
               <CardHeader>
-                <Award className="h-8 w-8 text-teal-600 mx-auto mb-2" />
+                <Award className="h-8 w-8 text-orange-500 mx-auto mb-2" />
                 <CardTitle className="text-lg">Certification Details</CardTitle>
               </CardHeader>
               <CardContent>
@@ -246,9 +246,9 @@ const Courses = () => {
               </CardContent>
             </Card>
 
-            <Card className="text-center">
+            <Card className="text-center border-l-4 border-l-orange-400">
               <CardHeader>
-                <Users className="h-8 w-8 text-teal-600 mx-auto mb-2" />
+                <Users className="h-8 w-8 text-orange-500 mx-auto mb-2" />
                 <CardTitle className="text-lg">Instructor Profiles</CardTitle>
               </CardHeader>
               <CardContent>
@@ -261,7 +261,7 @@ const Courses = () => {
             <p className="text-lg text-gray-700 mb-4">
               Each course includes detailed modules, prerequisites, duration, and schedule information
             </p>
-            <Button size="lg" className="bg-teal-600 hover:bg-teal-700">
+            <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-white border-0">
               View All Course Details
             </Button>
           </div>

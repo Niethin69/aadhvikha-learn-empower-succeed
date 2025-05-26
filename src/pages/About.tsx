@@ -6,35 +6,35 @@ import { Target, Eye, Heart, Award, Users, BookOpen } from "lucide-react";
 const About = () => {
   const values = [
     {
-      icon: <Heart className="h-8 w-8 text-teal-600" />,
+      icon: <Heart className="h-8 w-8 text-orange-500" />,
       title: "Empowerment",
       description: "We believe in empowering individuals through quality education and professional development"
     },
     {
-      icon: <BookOpen className="h-8 w-8 text-teal-600" />,
+      icon: <BookOpen className="h-8 w-8 text-orange-500" />,
       title: "Innovation",
       description: "We continuously innovate our teaching methods and course content to stay ahead of industry trends"
     },
     {
-      icon: <Award className="h-8 w-8 text-teal-600" />,
+      icon: <Award className="h-8 w-8 text-orange-500" />,
       title: "Excellence",
       description: "We strive for excellence in everything we do, from course design to student support"
     }
   ];
 
   return (
-    <div className="min-h-screen py-20">
+    <div className="min-h-screen py-20 warm-section mandala-pattern">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* About Section */}
         <section className="mb-20">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 animate-fade-in">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               About Aadhvikha Ventures
             </h1>
           </div>
           
           <div className="max-w-4xl mx-auto">
-            <Card className="mb-12">
+            <Card className="mb-12 hover:shadow-lg transition-all duration-300 border-l-4 border-l-orange-400">
               <CardContent className="p-8">
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
                   Aadhvikha Ventures is a forward-thinking educational organization dedicated to providing high-quality, accessible, and industry-relevant short courses that empower professionals to advance their careers and achieve their goals.
@@ -53,10 +53,10 @@ const About = () => {
         {/* Mission, Vision, Values */}
         <section className="mb-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-            <Card className="hover:shadow-lg transition-all duration-300">
+            <Card className="hover:shadow-lg transition-all duration-300 hover-scale border-t-4 border-t-pink-400">
               <CardHeader>
                 <div className="flex items-center mb-4">
-                  <Target className="h-8 w-8 text-teal-600 mr-3" />
+                  <Target className="h-8 w-8 text-orange-500 mr-3" />
                   <CardTitle className="text-2xl font-bold text-gray-900">Mission</CardTitle>
                 </div>
               </CardHeader>
@@ -67,10 +67,10 @@ const About = () => {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-all duration-300">
+            <Card className="hover:shadow-lg transition-all duration-300 hover-scale border-t-4 border-t-pink-400">
               <CardHeader>
                 <div className="flex items-center mb-4">
-                  <Eye className="h-8 w-8 text-teal-600 mr-3" />
+                  <Eye className="h-8 w-8 text-orange-500 mr-3" />
                   <CardTitle className="text-2xl font-bold text-gray-900">Vision</CardTitle>
                 </div>
               </CardHeader>
@@ -88,7 +88,7 @@ const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {values.map((value, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-all duration-300 hover-scale">
+              <Card key={index} className="text-center hover:shadow-lg transition-all duration-300 hover-scale border-l-4 border-l-orange-400">
                 <CardHeader>
                   <div className="flex justify-center mb-4">
                     {value.icon}
@@ -116,9 +116,9 @@ const About = () => {
             </p>
           </div>
           
-          <Card className="text-center py-12">
+          <Card className="text-center py-12 bg-gradient-accent border-t-4 border-t-pink-400">
             <CardContent>
-              <Users className="h-16 w-16 text-teal-600 mx-auto mb-6" />
+              <Users className="h-16 w-16 text-orange-500 mx-auto mb-6" />
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">Team Profiles Coming Soon</h3>
               <p className="text-lg text-gray-600">
                 We're preparing detailed profiles of our expert team members and industry professionals.
@@ -131,16 +131,16 @@ const About = () => {
         <section>
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Certifying Partner</h2>
-            <Badge className="bg-teal-600 text-white text-lg px-4 py-2 mb-8">
+            <Badge className="bg-gradient-primary text-white text-lg px-4 py-2 mb-8 border-0">
               Internationally Recognized
             </Badge>
           </div>
 
-          <Card className="max-w-4xl mx-auto hover:shadow-lg transition-all duration-300">
+          <Card className="max-w-4xl mx-auto hover:shadow-lg transition-all duration-300 border-l-4 border-l-orange-400">
             <CardHeader className="text-center">
               <div className="flex justify-center mb-6">
-                <div className="w-32 h-32 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <Award className="h-16 w-16 text-teal-600" />
+                <div className="w-32 h-32 bg-gradient-accent rounded-lg flex items-center justify-center shadow-lg">
+                  <Award className="h-16 w-16 text-orange-500" />
                 </div>
               </div>
               <CardTitle className="text-2xl font-bold text-gray-900 mb-4">
@@ -158,7 +158,7 @@ const About = () => {
                 href="https://instam.org" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-teal-600 hover:text-teal-700 font-semibold text-lg"
+                className="inline-flex items-center text-orange-500 hover:text-orange-600 font-semibold text-lg transition-colors duration-200"
               >
                 Visit IAM Website →
               </a>

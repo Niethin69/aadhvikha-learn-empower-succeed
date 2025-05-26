@@ -144,10 +144,10 @@ const StudentResources = () => {
   ];
 
   return (
-    <div className="min-h-screen py-20">
+    <div className="min-h-screen py-20 warm-section mandala-pattern">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Student Resources
           </h1>
@@ -169,10 +169,10 @@ const StudentResources = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Enrollment FAQ */}
-            <Card>
+            <Card className="border-l-4 border-l-orange-400">
               <CardHeader>
                 <CardTitle className="text-xl font-semibold text-gray-900 flex items-center">
-                  <Users className="h-6 w-6 text-teal-600 mr-2" />
+                  <Users className="h-6 w-6 text-orange-500 mr-2" />
                   Enrollment
                 </CardTitle>
               </CardHeader>
@@ -193,10 +193,10 @@ const StudentResources = () => {
             </Card>
 
             {/* Certification FAQ */}
-            <Card>
+            <Card className="border-l-4 border-l-orange-400">
               <CardHeader>
                 <CardTitle className="text-xl font-semibold text-gray-900 flex items-center">
-                  <FileText className="h-6 w-6 text-teal-600 mr-2" />
+                  <FileText className="h-6 w-6 text-orange-500 mr-2" />
                   Certification
                 </CardTitle>
               </CardHeader>
@@ -217,10 +217,10 @@ const StudentResources = () => {
             </Card>
 
             {/* Payment FAQ */}
-            <Card>
+            <Card className="border-l-4 border-l-orange-400">
               <CardHeader>
                 <CardTitle className="text-xl font-semibold text-gray-900 flex items-center">
-                  <Download className="h-6 w-6 text-teal-600 mr-2" />
+                  <Download className="h-6 w-6 text-orange-500 mr-2" />
                   Payment
                 </CardTitle>
               </CardHeader>
@@ -241,10 +241,10 @@ const StudentResources = () => {
             </Card>
 
             {/* Course Content FAQ */}
-            <Card>
+            <Card className="border-l-4 border-l-orange-400">
               <CardHeader>
                 <CardTitle className="text-xl font-semibold text-gray-900 flex items-center">
-                  <BookOpen className="h-6 w-6 text-teal-600 mr-2" />
+                  <BookOpen className="h-6 w-6 text-orange-500 mr-2" />
                   Course Content
                 </CardTitle>
               </CardHeader>
@@ -265,10 +265,10 @@ const StudentResources = () => {
             </Card>
 
             {/* Support FAQ */}
-            <Card className="lg:col-span-2">
+            <Card className="lg:col-span-2 border-t-4 border-t-pink-400">
               <CardHeader>
                 <CardTitle className="text-xl font-semibold text-gray-900 flex items-center">
-                  <MessageCircle className="h-6 w-6 text-teal-600 mr-2" />
+                  <MessageCircle className="h-6 w-6 text-orange-500 mr-2" />
                   Support
                 </CardTitle>
               </CardHeader>
@@ -305,10 +305,10 @@ const StudentResources = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {blogPosts.map((post, index) => (
-              <Card key={index} className="hover:shadow-lg transition-all duration-300 hover-scale">
+              <Card key={index} className="hover:shadow-lg transition-all duration-300 hover-scale border-l-4 border-l-orange-400">
                 <CardHeader>
                   <div className="flex justify-between items-start mb-2">
-                    <span className="text-sm text-teal-600 font-medium">{post.category}</span>
+                    <span className="text-sm text-orange-600 font-medium bg-gradient-accent px-2 py-1 rounded">{post.category}</span>
                     <span className="text-sm text-gray-500">{post.date}</span>
                   </div>
                   <CardTitle className="text-xl font-bold text-gray-900 mb-2">
@@ -319,7 +319,7 @@ const StudentResources = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button variant="outline" className="w-full text-teal-600 border-teal-600 hover:bg-teal-50">
+                  <Button variant="outline" className="w-full text-orange-500 border-orange-500 hover:bg-orange-50">
                     Read More
                     <ExternalLink className="h-4 w-4 ml-2" />
                   </Button>
@@ -329,7 +329,7 @@ const StudentResources = () => {
           </div>
 
           <div className="text-center mt-8">
-            <Button size="lg" className="bg-teal-600 hover:bg-teal-700">
+            <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-white border-0">
               View All Articles
             </Button>
           </div>
@@ -348,7 +348,7 @@ const StudentResources = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {careerResources.map((resource, index) => (
-              <Card key={index} className="hover:shadow-lg transition-all duration-300 hover-scale">
+              <Card key={index} className="hover:shadow-lg transition-all duration-300 hover-scale border-l-4 border-l-orange-400">
                 <CardHeader>
                   <div className="flex items-start justify-between">
                     <div>
@@ -359,13 +359,13 @@ const StudentResources = () => {
                         {resource.description}
                       </CardDescription>
                     </div>
-                    <Download className="h-6 w-6 text-teal-600" />
+                    <Download className="h-6 w-6 text-orange-500" />
                   </div>
                 </CardHeader>
                 <CardContent>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-500">{resource.type}</span>
-                    <Button variant="outline" className="text-teal-600 border-teal-600 hover:bg-teal-50">
+                    <span className="text-sm text-gray-500 bg-gradient-accent px-2 py-1 rounded">{resource.type}</span>
+                    <Button variant="outline" className="text-orange-500 border-orange-500 hover:bg-orange-50">
                       Download
                     </Button>
                   </div>
@@ -375,14 +375,14 @@ const StudentResources = () => {
           </div>
 
           <div className="text-center mt-12">
-            <div className="bg-teal-50 p-8 rounded-lg">
+            <div className="bg-gradient-accent p-8 rounded-lg border-t-4 border-t-pink-400">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 Need Additional Support?
               </h3>
               <p className="text-lg text-gray-600 mb-6">
                 Our student support team is here to help you succeed. Contact us for personalized assistance.
               </p>
-              <Button size="lg" className="bg-teal-600 hover:bg-teal-700">
+              <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-white border-0">
                 Contact Support
               </Button>
             </div>
