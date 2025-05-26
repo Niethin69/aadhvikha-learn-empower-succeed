@@ -23,15 +23,12 @@ const Header = () => {
     <header className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <Link to="/" className="flex items-center space-x-3">
+          <Link to="/" className="flex items-center">
             <img 
               src="/lovable-uploads/d66f9bac-1e2d-4291-b364-342a0d944a0b.png" 
               alt="Aadhvikha Ventures Logo" 
               className="h-12 w-auto"
             />
-            <div className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-              Aadhvikha Ventures
-            </div>
           </Link>
 
           {/* Desktop Navigation */}
