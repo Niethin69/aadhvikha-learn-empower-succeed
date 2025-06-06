@@ -12,8 +12,28 @@ import HowItWorks from "./pages/HowItWorks";
 import StudentResources from "./pages/StudentResources";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import useScrollToTop from "./hooks/useScrollToTop";
 
 const queryClient = new QueryClient();
+
+const AppContent = () => {
+  useScrollToTop();
+  
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <Header />
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/courses" element={<Courses />} />
+        <Route path="/how-it-works" element={<HowItWorks />} />
+        <Route path="/student-resources" element={<StudentResources />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </div>
+  );
+};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -21,18 +41,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <div className="min-h-screen bg-gray-50">
-          <Header />
-          <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/courses" element={<Courses />} />
-            <Route path="/how-it-works" element={<HowItWorks />} />
-            <Route path="/student-resources" element={<StudentResources />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </div>
+        <AppContent />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
