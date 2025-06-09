@@ -1,6 +1,5 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Search, FileText, BookOpen, Award, Download, Clock, Book, Smartphone } from "lucide-react";
 
 const HowItWorks = () => {
@@ -105,30 +104,6 @@ const HowItWorks = () => {
           </div>
         </section>
 
-        {/* Certification Process */}
-        <section className="mb-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Certification Process
-            </h2>
-          </div>
-          
-          <Card className="max-w-4xl mx-auto text-center py-12 bg-gradient-accent border-t-4 border-t-pink-400">
-            <CardContent>
-              <Award className="h-16 w-16 text-orange-500 mx-auto mb-6" />
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                Detailed Certification Process
-              </h3>
-              <p className="text-lg text-gray-600 mb-6">
-                Complete information about our certification requirements, assessment methods, and credential verification process will be available here.
-              </p>
-              <Button className="bg-gradient-primary hover:opacity-90 text-white border-0">
-                Learn More About Certification
-              </Button>
-            </CardContent>
-          </Card>
-        </section>
-
         {/* Learning Format */}
         <section>
           <div className="text-center mb-12">
@@ -158,26 +133,6 @@ const HowItWorks = () => {
                 </CardContent>
               </Card>
             ))}
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="mt-20 text-center">
-          <div className="bg-gradient-accent p-12 rounded-lg shadow-lg">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Ready to Get Started?
-            </h2>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Join thousands of professionals who have advanced their careers through our certified programs
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-white border-0">
-                Explore Courses
-              </Button>
-              <Button size="lg" variant="outline" className="text-orange-500 border-orange-500 hover:bg-orange-50">
-                Request Information
-              </Button>
-            </div>
           </div>
         </section>
       </div>

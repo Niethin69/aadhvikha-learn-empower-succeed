@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
 import { BookOpen, Clock, Award, User, Globe, Download, Info, CheckCircle } from "lucide-react";
+import ApplicationForm from "@/components/ApplicationForm";
 
 const Courses = () => {
   const learningOutcomes = [
@@ -223,18 +224,16 @@ const Courses = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-white border-0 flex items-center gap-2">
-                <BookOpen className="h-5 w-5" />
-                Enroll Now
-              </Button>
               <Button size="lg" variant="outline" className="border-orange-300 text-orange-700 hover:bg-orange-50 flex items-center gap-2">
                 <Download className="h-5 w-5" />
                 Download Course Outline
               </Button>
-              <Button size="lg" variant="outline" className="border-pink-300 text-pink-700 hover:bg-pink-50 flex items-center gap-2">
-                <Info className="h-5 w-5" />
-                Request Information
-              </Button>
+              <ApplicationForm>
+                <Button size="lg" variant="outline" className="border-pink-300 text-pink-700 hover:bg-pink-50 flex items-center gap-2">
+                  <Info className="h-5 w-5" />
+                  Request Information
+                </Button>
+              </ApplicationForm>
             </div>
           </CardContent>
         </Card>

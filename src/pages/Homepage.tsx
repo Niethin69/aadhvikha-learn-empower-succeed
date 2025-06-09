@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Users, Star, BookOpen, Award, Clock, Download } from "lucide-react";
+import { Link } from "react-router-dom";
+import ApplicationForm from "@/components/ApplicationForm";
 
 const Homepage = () => {
   const features = [
@@ -62,12 +64,11 @@ const Homepage = () => {
               Learn. Certify. Succeed.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-white border-0 text-lg px-8 py-4">
-                Explore Courses
-              </Button>
-              <Button size="lg" variant="outline" className="text-orange-500 border-orange-500 hover:bg-orange-50 text-lg px-8 py-4">
-                Request Information
-              </Button>
+              <Link to="/courses">
+                <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-white border-0 text-lg px-8 py-4">
+                  Explore Courses
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -167,9 +168,11 @@ const Homepage = () => {
           <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto">
             Join thousands of professionals who have advanced their careers through our certified programs
           </p>
-          <Button size="lg" className="bg-white text-orange-500 hover:bg-gray-100 text-lg px-8 py-4">
-            Start Learning Today
-          </Button>
+          <ApplicationForm>
+            <Button size="lg" className="bg-white text-orange-500 hover:bg-gray-100 text-lg px-8 py-4">
+              Request Information
+            </Button>
+          </ApplicationForm>
         </div>
       </section>
     </div>

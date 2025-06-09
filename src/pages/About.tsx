@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Target, Eye, Heart, Award, Users, BookOpen } from "lucide-react";
+import { Target, Eye, Heart, Award, BookOpen } from "lucide-react";
 
 const About = () => {
   const values = [
@@ -105,26 +105,6 @@ const About = () => {
               </Card>
             ))}
           </div>
-        </section>
-
-        {/* Our Team Section */}
-        <section className="mb-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Team</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Meet the dedicated professionals behind Aadhvikha Ventures
-            </p>
-          </div>
-          
-          <Card className="text-center py-12 bg-gradient-accent border-t-4 border-t-pink-400">
-            <CardContent>
-              <Users className="h-16 w-16 text-orange-500 mx-auto mb-6" />
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Team Profiles Coming Soon</h3>
-              <p className="text-lg text-gray-600">
-                We're preparing detailed profiles of our expert team members and industry professionals.
-              </p>
-            </CardContent>
-          </Card>
         </section>
 
         {/* Certifying Partner Section */}

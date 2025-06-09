@@ -49,15 +49,12 @@ const Header = () => {
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center">
             <ApplicationForm>
               <Button variant="outline" className="text-orange-500 border-orange-500 hover:bg-orange-50">
                 Request Information
               </Button>
             </ApplicationForm>
-            <Button className="bg-gradient-primary hover:opacity-90 text-white border-0">
-              Start Learning Today
-            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -92,15 +89,12 @@ const Header = () => {
                   {item.name}
                 </Link>
               ))}
-              <div className="flex flex-col space-y-2 pt-4">
+              <div className="pt-4">
                 <ApplicationForm>
-                  <Button variant="outline" className="text-orange-500 border-orange-500 hover:bg-orange-50">
+                  <Button variant="outline" className="text-orange-500 border-orange-500 hover:bg-orange-50 w-full">
                     Request Information
                   </Button>
                 </ApplicationForm>
-                <Button className="bg-gradient-primary hover:opacity-90 text-white border-0">
-                  Start Learning Today
-                </Button>
               </div>
             </nav>
           </div>
