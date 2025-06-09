@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -30,16 +29,7 @@ const ApplicationForm = ({ trigger, children }: ApplicationFormProps) => {
   });
 
   const courseOptions = [
-    "Digital Marketing Fundamentals",
-    "Social Media Strategy & Management",
-    "Content Creation & Copywriting",
-    "Email Marketing Mastery",
-    "SEO & Google Analytics",
-    "PPC Advertising (Google Ads & Facebook)",
-    "E-commerce Marketing",
-    "Brand Development & Strategy",
-    "Advanced Analytics & Data Interpretation",
-    "Marketing Automation"
+    "Certified Contemporary Management"
   ];
 
   const handleInputChange = (field: string, value: string) => {
