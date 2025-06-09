@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ApplicationForm from "./ApplicationForm";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -49,9 +50,11 @@ const Header = () => {
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" className="text-orange-500 border-orange-500 hover:bg-orange-50">
-              Request Information
-            </Button>
+            <ApplicationForm>
+              <Button variant="outline" className="text-orange-500 border-orange-500 hover:bg-orange-50">
+                Request Information
+              </Button>
+            </ApplicationForm>
             <Button className="bg-gradient-primary hover:opacity-90 text-white border-0">
               Start Learning Today
             </Button>
@@ -90,9 +93,11 @@ const Header = () => {
                 </Link>
               ))}
               <div className="flex flex-col space-y-2 pt-4">
-                <Button variant="outline" className="text-orange-500 border-orange-500 hover:bg-orange-50">
-                  Request Information
-                </Button>
+                <ApplicationForm>
+                  <Button variant="outline" className="text-orange-500 border-orange-500 hover:bg-orange-50">
+                    Request Information
+                  </Button>
+                </ApplicationForm>
                 <Button className="bg-gradient-primary hover:opacity-90 text-white border-0">
                   Start Learning Today
                 </Button>

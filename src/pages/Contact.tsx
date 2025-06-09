@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
+import ApplicationForm from "@/components/ApplicationForm";
 
 const Contact = () => {
   const [contactMethod, setContactMethod] = useState("");
@@ -104,10 +105,12 @@ const Contact = () => {
             <div className="space-y-4">
               <h3 className="text-xl font-semibold text-gray-900">Quick Actions</h3>
               <div className="flex flex-col space-y-3">
-                <Button className="bg-gradient-primary hover:opacity-90 text-white border-0 justify-start">
-                  <Mail className="h-4 w-4 mr-2" />
-                  Request Course Information
-                </Button>
+                <ApplicationForm>
+                  <Button className="bg-gradient-primary hover:opacity-90 text-white border-0 justify-start">
+                    <Mail className="h-4 w-4 mr-2" />
+                    Request Course Information
+                  </Button>
+                </ApplicationForm>
                 <Button variant="outline" className="text-orange-500 border-orange-500 hover:bg-orange-50 justify-start">
                   <Phone className="h-4 w-4 mr-2" />
                   Schedule a Call
