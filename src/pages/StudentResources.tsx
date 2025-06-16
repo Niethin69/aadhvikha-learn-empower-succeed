@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -142,6 +141,15 @@ const StudentResources = () => {
       type: "Interactive Guide"
     }
   ];
+
+  const handleDownload = (filename: string) => {
+    const link = document.createElement('a');
+    link.href = `/${filename}`;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <div className="min-h-screen py-20 warm-section mandala-pattern">
@@ -372,6 +380,43 @@ const StudentResources = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+
+          <div className="mt-12">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Download Career Guides
+              </h3>
+              <p className="text-lg text-gray-600">
+                Access our comprehensive career development resources
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <Button 
+                onClick={() => handleDownload('Website Resume IAM.pdf')}
+                className="bg-gradient-primary hover:opacity-90 text-white border-0 h-12 text-lg font-semibold transition-all duration-300 hover-scale"
+              >
+                <Download className="h-5 w-5 mr-2" />
+                Download Resume Tips
+              </Button>
+              
+              <Button 
+                onClick={() => handleDownload('Website Interview Tips IAM.pdf')}
+                className="bg-gradient-primary hover:opacity-90 text-white border-0 h-12 text-lg font-semibold transition-all duration-300 hover-scale"
+              >
+                <Download className="h-5 w-5 mr-2" />
+                Download Interview Tips
+              </Button>
+              
+              <Button 
+                onClick={() => handleDownload('Website Work Life Tips IAM.pdf')}
+                className="bg-gradient-primary hover:opacity-90 text-white border-0 h-12 text-lg font-semibold transition-all duration-300 hover-scale"
+              >
+                <Download className="h-5 w-5 mr-2" />
+                Download Work Life Tips
+              </Button>
+            </div>
           </div>
 
           <div className="text-center mt-12">
