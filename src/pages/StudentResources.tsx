@@ -123,22 +123,14 @@ const StudentResources = () => {
     {
       title: "Resume Building Guide",
       description: "Comprehensive guide to creating a professional resume that highlights your certifications and skills.",
-      type: "PDF Guide"
+      type: "PDF Guide",
+      filename: "Website Resume IAM.pdf"
     },
     {
       title: "Interview Preparation Toolkit",
       description: "Essential tips and practice questions to help you succeed in job interviews.",
-      type: "PDF Guide"
-    },
-    {
-      title: "Industry Salary Reports",
-      description: "Current salary benchmarks and career progression data for certified professionals.",
-      type: "PDF Report"
-    },
-    {
-      title: "Career Path Roadmaps",
-      description: "Visual guides showing potential career paths and required certifications for different industries.",
-      type: "Interactive Guide"
+      type: "PDF Guide",
+      filename: "Website Interview Tips IAM.pdf"
     }
   ];
 
@@ -373,50 +365,17 @@ const StudentResources = () => {
                 <CardContent>
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-gray-500 bg-gradient-accent px-2 py-1 rounded">{resource.type}</span>
-                    <Button variant="outline" className="text-orange-500 border-orange-500 hover:bg-orange-50">
+                    <Button 
+                      onClick={() => handleDownload(resource.filename)}
+                      variant="outline" 
+                      className="text-orange-500 border-orange-500 hover:bg-orange-50"
+                    >
                       Download
                     </Button>
                   </div>
                 </CardContent>
               </Card>
             ))}
-          </div>
-
-          <div className="mt-12">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Download Career Guides
-              </h3>
-              <p className="text-lg text-gray-600">
-                Access our comprehensive career development resources
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Button 
-                onClick={() => handleDownload('Website Resume IAM.pdf')}
-                className="bg-gradient-primary hover:opacity-90 text-white border-0 h-12 text-lg font-semibold transition-all duration-300 hover-scale"
-              >
-                <Download className="h-5 w-5 mr-2" />
-                Download Resume Tips
-              </Button>
-              
-              <Button 
-                onClick={() => handleDownload('Website Interview Tips IAM.pdf')}
-                className="bg-gradient-primary hover:opacity-90 text-white border-0 h-12 text-lg font-semibold transition-all duration-300 hover-scale"
-              >
-                <Download className="h-5 w-5 mr-2" />
-                Download Interview Tips
-              </Button>
-              
-              <Button 
-                onClick={() => handleDownload('Website Work Life Tips IAM.pdf')}
-                className="bg-gradient-primary hover:opacity-90 text-white border-0 h-12 text-lg font-semibold transition-all duration-300 hover-scale"
-              >
-                <Download className="h-5 w-5 mr-2" />
-                Download Work Life Tips
-              </Button>
-            </div>
           </div>
 
           <div className="text-center mt-12">
