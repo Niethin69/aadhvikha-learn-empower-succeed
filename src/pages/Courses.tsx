@@ -47,6 +47,15 @@ const Courses = () => {
     }
   };
 
+  const handleDownloadOutline = () => {
+    const link = document.createElement('a');
+    link.href = '/Aadhvikha Ventures Course Outline (1).pdf';
+    link.download = 'Aadhvikha Ventures Course Outline.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="min-h-screen py-20 warm-section mandala-pattern">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -224,7 +233,12 @@ const Courses = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="outline" className="border-orange-300 text-orange-700 hover:bg-orange-50 flex items-center gap-2">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-orange-300 text-orange-700 hover:bg-orange-50 flex items-center gap-2"
+                onClick={handleDownloadOutline}
+              >
                 <Download className="h-5 w-5" />
                 Download Course Outline
               </Button>
