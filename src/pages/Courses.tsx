@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -50,7 +49,7 @@ const Courses = () => {
   const handleDownloadOutline = () => {
     const link = document.createElement('a');
     link.href = '/Aadhvikha Ventures Course Outline (3).pdf';
-    link.download = 'Aadhvikha Ventures Course Outline.pdf';
+    link.download = 'Aadhvikha Ventures Course Outline (3).pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
