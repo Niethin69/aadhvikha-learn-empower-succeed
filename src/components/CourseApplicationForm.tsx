@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Separator } from "@/components/ui/separator";
@@ -18,6 +19,7 @@ interface CourseApplicationFormProps {
 const CourseApplicationForm = ({ children }: CourseApplicationFormProps) => {
   const { toast } = useToast();
   const [isOpen, setIsOpen] = useState(false);
+  const [termsAccepted, setTermsAccepted] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     dateOfBirth: "",
@@ -44,6 +46,16 @@ const CourseApplicationForm = ({ children }: CourseApplicationFormProps) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Check if terms are accepted
+    if (!termsAccepted) {
+      toast({
+        title: "Terms Agreement Required",
+        description: "Please accept the terms and conditions to submit your application.",
+        variant: "destructive",
+      });
+      return;
+    }
     
     // Validate required fields
     const requiredFields = [
@@ -87,6 +99,7 @@ const CourseApplicationForm = ({ children }: CourseApplicationFormProps) => {
       passportIc: "",
       documentFile: null,
     });
+    setTermsAccepted(false);
   };
 
   return (
@@ -295,16 +308,29 @@ const CourseApplicationForm = ({ children }: CourseApplicationFormProps) => {
           {/* Agreement and Submit */}
           <div className="space-y-6">
             <div className="bg-gradient-accent p-6 rounded-lg border-l-4 border-l-pink-400">
-              <p className="text-sm text-gray-700 leading-relaxed">
+              <p className="text-sm text-gray-700 leading-relaxed mb-4">
                 Upon submitting this form, I hereby consent to adhere to all the policies and guidelines set forth by Aadhvikha Ventures. Furthermore, I authorize the utilization of my contact details for communication purposes related to the application.
               </p>
+              
+              <div className="flex items-start space-x-3">
+                <Checkbox
+                  id="terms"
+                  checked={termsAccepted}
+                  onCheckedChange={(checked) => setTermsAccepted(checked as boolean)}
+                  className="mt-1"
+                />
+                <Label htmlFor="terms" className="text-sm text-gray-700 cursor-pointer">
+                  I accept the terms and conditions stated above *
+                </Label>
+              </div>
             </div>
 
             <div className="flex justify-end">
               <Button 
                 type="submit"
                 size="lg"
-                className="bg-gradient-primary hover:opacity-90 text-white border-0 px-8 py-3 text-lg transition-all duration-200 hover:scale-105"
+                disabled={!termsAccepted}
+                className="bg-gradient-primary hover:opacity-90 text-white border-0 px-8 py-3 text-lg transition-all duration-200 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
                 <Send className="h-5 w-5 mr-2" />
                 Submit Application

@@ -4,8 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
-import { BookOpen, Clock, Award, User, Globe, Download, Info, CheckCircle, UserPlus } from "lucide-react";
-import ApplicationForm from "@/components/ApplicationForm";
+import { BookOpen, Clock, Award, User, Globe, Download, UserPlus } from "lucide-react";
 import CourseApplicationForm from "@/components/CourseApplicationForm";
 
 const Courses = () => {
@@ -249,13 +248,6 @@ const Courses = () => {
                   Apply Now
                 </Button>
               </CourseApplicationForm>
-              
-              <ApplicationForm>
-                <Button size="lg" variant="outline" className="border-pink-300 text-pink-700 hover:bg-pink-50 flex items-center gap-2">
-                  <Info className="h-5 w-5" />
-                  Request Information
-                </Button>
-              </ApplicationForm>
             </div>
           </CardContent>
         </Card>
