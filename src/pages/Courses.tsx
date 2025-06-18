@@ -49,7 +49,7 @@ const Courses = () => {
 
   const handleDownloadOutline = () => {
     const link = document.createElement('a');
-    link.href = '/Aadhvikha Ventures Course Outline (1).pdf';
+    link.href = '/Aadhvikha Ventures Course Outline (3).pdf';
     link.download = 'Aadhvikha Ventures Course Outline.pdf';
     document.body.appendChild(link);
     link.click();
