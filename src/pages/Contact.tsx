@@ -26,7 +26,7 @@ const Contact = () => {
               <CardContent className="p-8 text-center">
                 <Mail className="h-12 w-12 text-orange-500 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Email Us</h3>
-                <p className="text-gray-600 mb-2">info@aadhvikhaventures.com</p>
+                <p className="text-gray-600 mb-2">aadhvikha@outlook.com</p>
                 <p className="text-sm text-gray-500">We'll respond within 24 hours</p>
               </CardContent>
             </Card>
@@ -35,7 +35,7 @@ const Contact = () => {
               <CardContent className="p-8 text-center">
                 <Phone className="h-12 w-12 text-orange-500 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Call Us</h3>
-                <p className="text-gray-600 mb-2">+1 (555) 123-4567</p>
+                <p className="text-gray-600 mb-2">+60139971315</p>
                 <p className="text-sm text-gray-500">Monday - Friday, 9:00 AM - 6:00 PM</p>
               </CardContent>
             </Card>
