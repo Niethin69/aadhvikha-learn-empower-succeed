@@ -11,6 +11,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, Di
 import { Separator } from "@/components/ui/separator";
 import { Upload, Send, User, MapPin, FileText } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 interface CourseApplicationFormProps {
   children: React.ReactNode;
@@ -19,6 +20,7 @@ interface CourseApplicationFormProps {
 const CourseApplicationForm = ({ children }: CourseApplicationFormProps) => {
   const { toast } = useToast();
   const [isOpen, setIsOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
@@ -44,7 +46,7 @@ const CourseApplicationForm = ({ children }: CourseApplicationFormProps) => {
     setFormData(prev => ({ ...prev, documentFile: file }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Check if terms are accepted
@@ -74,32 +76,76 @@ const CourseApplicationForm = ({ children }: CourseApplicationFormProps) => {
       return;
     }
 
-    // Here you would typically send the data to your backend
-    console.log("Form submitted:", formData);
-    
-    toast({
-      title: "Application Submitted!",
-      description: "Thank you for your application. We'll review it and get back to you within 24-48 hours.",
-    });
-    
-    setIsOpen(false);
-    
-    // Reset form
-    setFormData({
-      fullName: "",
-      dateOfBirth: "",
-      gender: "",
-      email: "",
-      phone: "",
-      street: "",
-      streetSecond: "",
-      state: "",
-      postcode: "",
-      country: "",
-      passportIc: "",
-      documentFile: null,
-    });
-    setTermsAccepted(false);
+    setIsSubmitting(true);
+
+    try {
+      // Prepare the data for Supabase insertion
+      const applicationData = {
+        full_name: formData.fullName,
+        date_of_birth: formData.dateOfBirth,
+        gender: formData.gender,
+        email: formData.email,
+        phone: formData.phone,
+        street: formData.street,
+        street_second: formData.streetSecond || null,
+        state: formData.state,
+        postcode: formData.postcode,
+        country: formData.country,
+        passport_ic: formData.passportIc,
+        document_file_name: formData.documentFile?.name || null,
+        terms_accepted: termsAccepted,
+        course_code: 'MGT1800'
+      };
+
+      console.log("Submitting application data:", applicationData);
+
+      // Insert the application data into Supabase
+      const { data, error } = await supabase
+        .from('course_applications')
+        .insert([applicationData])
+        .select();
+
+      if (error) {
+        console.error("Supabase error:", error);
+        throw error;
+      }
+
+      console.log("Application submitted successfully:", data);
+      
+      toast({
+        title: "Application Submitted!",
+        description: "Thank you for your application. We'll review it and get back to you within 24-48 hours.",
+      });
+      
+      setIsOpen(false);
+      
+      // Reset form
+      setFormData({
+        fullName: "",
+        dateOfBirth: "",
+        gender: "",
+        email: "",
+        phone: "",
+        street: "",
+        streetSecond: "",
+        state: "",
+        postcode: "",
+        country: "",
+        passportIc: "",
+        documentFile: null,
+      });
+      setTermsAccepted(false);
+
+    } catch (error) {
+      console.error("Error submitting application:", error);
+      toast({
+        title: "Submission Failed",
+        description: "There was an error submitting your application. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -329,11 +375,11 @@ const CourseApplicationForm = ({ children }: CourseApplicationFormProps) => {
               <Button 
                 type="submit"
                 size="lg"
-                disabled={!termsAccepted}
+                disabled={!termsAccepted || isSubmitting}
                 className="bg-gradient-primary hover:opacity-90 text-white border-0 px-8 py-3 text-lg transition-all duration-200 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
                 <Send className="h-5 w-5 mr-2" />
-                Submit Application
+                {isSubmitting ? "Submitting..." : "Submit Application"}
               </Button>
             </div>
           </div>

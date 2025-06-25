@@ -39,6 +39,66 @@ export type Database = {
         }
         Relationships: []
       }
+      course_applications: {
+        Row: {
+          country: string
+          course_code: string | null
+          date_of_birth: string
+          document_file_name: string | null
+          document_file_url: string | null
+          email: string
+          full_name: string
+          gender: string
+          id: string
+          passport_ic: string
+          phone: string
+          postcode: string
+          state: string
+          street: string
+          street_second: string | null
+          submitted_at: string
+          terms_accepted: boolean
+        }
+        Insert: {
+          country: string
+          course_code?: string | null
+          date_of_birth: string
+          document_file_name?: string | null
+          document_file_url?: string | null
+          email: string
+          full_name: string
+          gender: string
+          id?: string
+          passport_ic: string
+          phone: string
+          postcode: string
+          state: string
+          street: string
+          street_second?: string | null
+          submitted_at?: string
+          terms_accepted?: boolean
+        }
+        Update: {
+          country?: string
+          course_code?: string | null
+          date_of_birth?: string
+          document_file_name?: string | null
+          document_file_url?: string | null
+          email?: string
+          full_name?: string
+          gender?: string
+          id?: string
+          passport_ic?: string
+          phone?: string
+          postcode?: string
+          state?: string
+          street?: string
+          street_second?: string | null
+          submitted_at?: string
+          terms_accepted?: boolean
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
