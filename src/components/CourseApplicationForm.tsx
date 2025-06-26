@@ -9,9 +9,10 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Separator } from "@/components/ui/separator";
-import { Upload, Send, User, MapPin, FileText } from "lucide-react";
+import { Upload, Send, User, MapPin, FileText, Eye } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import DocumentViewer from "./DocumentViewer";
 
 interface CourseApplicationFormProps {
   children: React.ReactNode;
@@ -22,6 +23,7 @@ const CourseApplicationForm = ({ children }: CourseApplicationFormProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [termsAccepted, setTermsAccepted] = useState(false);
+  const [uploadedFileUrl, setUploadedFileUrl] = useState<string>("");
   const [formData, setFormData] = useState({
     fullName: "",
     dateOfBirth: "",
@@ -44,6 +46,32 @@ const CourseApplicationForm = ({ children }: CourseApplicationFormProps) => {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0] || null;
     setFormData(prev => ({ ...prev, documentFile: file }));
+    setUploadedFileUrl(""); // Reset uploaded file URL when new file is selected
+  };
+
+  const uploadFile = async (file: File): Promise<string> => {
+    const fileExt = file.name.split('.').pop();
+    const fileName = `${Date.now()}-${Math.random().toString(36).substring(2)}.${fileExt}`;
+    const filePath = `course-applications/${fileName}`;
+
+    console.log("Uploading file:", filePath);
+
+    const { data, error } = await supabase.storage
+      .from('course-documents')
+      .upload(filePath, file);
+
+    if (error) {
+      console.error("File upload error:", error);
+      throw error;
+    }
+
+    // Get public URL for the uploaded file
+    const { data: urlData } = supabase.storage
+      .from('course-documents')
+      .getPublicUrl(filePath);
+
+    console.log("File uploaded successfully:", urlData.publicUrl);
+    return urlData.publicUrl;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -79,6 +107,14 @@ const CourseApplicationForm = ({ children }: CourseApplicationFormProps) => {
     setIsSubmitting(true);
 
     try {
+      let fileUrl = "";
+      
+      // Upload file to Supabase Storage
+      if (formData.documentFile) {
+        fileUrl = await uploadFile(formData.documentFile);
+        setUploadedFileUrl(fileUrl);
+      }
+
       // Prepare the data for Supabase insertion
       const applicationData = {
         full_name: formData.fullName,
@@ -93,6 +129,7 @@ const CourseApplicationForm = ({ children }: CourseApplicationFormProps) => {
         country: formData.country,
         passport_ic: formData.passportIc,
         document_file_name: formData.documentFile?.name || null,
+        document_file_url: fileUrl,
         terms_accepted: termsAccepted,
         course_code: 'MGT1800'
       };
@@ -135,6 +172,7 @@ const CourseApplicationForm = ({ children }: CourseApplicationFormProps) => {
         documentFile: null,
       });
       setTermsAccepted(false);
+      setUploadedFileUrl("");
 
     } catch (error) {
       console.error("Error submitting application:", error);
@@ -343,6 +381,14 @@ const CourseApplicationForm = ({ children }: CourseApplicationFormProps) => {
                     className="file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-orange-50 file:text-orange-700 hover:file:bg-orange-100"
                   />
                   <Upload className="h-5 w-5 text-gray-400" />
+                  {uploadedFileUrl && formData.documentFile && (
+                    <DocumentViewer fileName={formData.documentFile.name} fileUrl={uploadedFileUrl}>
+                      <Button type="button" variant="outline" size="sm">
+                        <Eye className="h-4 w-4 mr-2" />
+                        Preview
+                      </Button>
+                    </DocumentViewer>
+                  )}
                 </div>
                 <p className="text-sm text-gray-500">Accepted formats: PDF, JPG, JPEG, PNG (Max 10MB)</p>
               </div>
