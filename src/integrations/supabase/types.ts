@@ -58,6 +58,7 @@ export type Database = {
           street_second: string | null
           submitted_at: string
           terms_accepted: boolean
+          user_id: string | null
         }
         Insert: {
           country: string
@@ -77,6 +78,7 @@ export type Database = {
           street_second?: string | null
           submitted_at?: string
           terms_accepted?: boolean
+          user_id?: string | null
         }
         Update: {
           country?: string
@@ -96,6 +98,7 @@ export type Database = {
           street_second?: string | null
           submitted_at?: string
           terms_accepted?: boolean
+          user_id?: string | null
         }
         Relationships: []
       }
