@@ -1,8 +1,9 @@
+
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { FileText, BookOpen, Users, Download, ExternalLink, MessageCircle } from "lucide-react";
+import { FileText, BookOpen, Users, Download, MessageCircle } from "lucide-react";
 
 const StudentResources = () => {
   const faqData = {
@@ -97,27 +98,6 @@ const StudentResources = () => {
       }
     ]
   };
-
-  const blogPosts = [
-    {
-      title: "The Future of Professional Development in 2024",
-      excerpt: "Exploring emerging trends and technologies shaping professional education and career advancement.",
-      date: "March 15, 2024",
-      category: "Industry Insights"
-    },
-    {
-      title: "How to Choose the Right Professional Certification",
-      excerpt: "A comprehensive guide to selecting certifications that align with your career goals and industry requirements.",
-      date: "March 10, 2024",
-      category: "Career Guidance"
-    },
-    {
-      title: "Success Stories: Alumni Career Transformations",
-      excerpt: "Real stories from graduates who have successfully advanced their careers through our certification programs.",
-      date: "March 5, 2024",
-      category: "Success Stories"
-    }
-  ];
 
   const careerResources = [
     {
@@ -292,49 +272,6 @@ const StudentResources = () => {
           </div>
         </section>
 
-        {/* Blog/Articles Section */}
-        <section className="mb-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Blog & Articles
-            </h2>
-            <p className="text-xl text-gray-600">
-              Stay updated with industry insights, career tips, and success stories
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {blogPosts.map((post, index) => (
-              <Card key={index} className="hover:shadow-lg transition-all duration-300 hover-scale border-l-4 border-l-orange-400">
-                <CardHeader>
-                  <div className="flex justify-between items-start mb-2">
-                    <span className="text-sm text-orange-600 font-medium bg-gradient-accent px-2 py-1 rounded">{post.category}</span>
-                    <span className="text-sm text-gray-500">{post.date}</span>
-                  </div>
-                  <CardTitle className="text-xl font-bold text-gray-900 mb-2">
-                    {post.title}
-                  </CardTitle>
-                  <CardDescription className="text-gray-600">
-                    {post.excerpt}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Button variant="outline" className="w-full text-orange-500 border-orange-500 hover:bg-orange-50">
-                    Read More
-                    <ExternalLink className="h-4 w-4 ml-2" />
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          <div className="text-center mt-8">
-            <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-white border-0">
-              View All Articles
-            </Button>
-          </div>
-        </section>
-
         {/* Career Resources Section */}
         <section>
           <div className="text-center mb-12">
@@ -376,20 +313,6 @@ const StudentResources = () => {
                 </CardContent>
               </Card>
             ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <div className="bg-gradient-accent p-8 rounded-lg border-t-4 border-t-pink-400">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Need Additional Support?
-              </h3>
-              <p className="text-lg text-gray-600 mb-6">
-                Our student support team is here to help you succeed. Contact us for personalized assistance.
-              </p>
-              <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-white border-0">
-                Contact Support
-              </Button>
-            </div>
           </div>
         </section>
       </div>
