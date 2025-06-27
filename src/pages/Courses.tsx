@@ -1,11 +1,10 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
-import { BookOpen, Clock, Award, User, Globe, Download, UserPlus, CheckCircle } from "lucide-react";
+import { BookOpen, Clock, Award, Globe, Download, UserPlus, CheckCircle } from "lucide-react";
 import CourseApplicationForm from "@/components/CourseApplicationForm";
 
 const Courses = () => {
@@ -98,7 +97,7 @@ const Courses = () => {
 
           <CardContent className="p-8">
             {/* Course Details Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               <div className="flex items-center gap-3 p-4 bg-gradient-soft rounded-lg border-l-4 border-l-orange-300">
                 <Clock className="h-6 w-6 text-orange-500" />
                 <div>
@@ -111,13 +110,6 @@ const Courses = () => {
                 <div>
                   <p className="font-semibold text-gray-900">Delivery Mode</p>
                   <p className="text-gray-600">100% Online (Self-paced)</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 p-4 bg-gradient-soft rounded-lg border-l-4 border-l-orange-300">
-                <User className="h-6 w-6 text-orange-500" />
-                <div>
-                  <p className="font-semibold text-gray-900">Instructor</p>
-                  <p className="text-gray-600">Syed Helmy bin Syed Abu Bakar</p>
                 </div>
               </div>
             </div>
